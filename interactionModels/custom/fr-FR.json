@@ -1,0 +1,695 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "j\u0027ai faim",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "SayStoresIntent",
+          "slots": [],
+          "samples": [
+            "Donne moi la liste des restaurants"
+          ]
+        },
+        {
+          "name": "RegisterAddressIntent",
+          "slots": [
+            {
+              "name": "streetNumber",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{streetNumber}"
+              ]
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetName",
+              "samples": [
+                "{street}"
+              ]
+            },
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{code}"
+              ]
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "samples": [
+                "{city}"
+              ]
+            }
+          ],
+          "samples": [
+            "Enregistre mon adresse"
+          ]
+        },
+        {
+          "name": "RegisterPriceIntent",
+          "slots": [
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{price}",
+                "{price} euros"
+              ]
+            },
+            {
+              "name": "deliveryCharges",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{deliveryCharges} euros",
+                "{deliveryCharges}"
+              ]
+            },
+            {
+              "name": "preparationTime",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{preparationTime} minutes",
+                "{preparationTime}"
+              ]
+            }
+          ],
+          "samples": [
+            "Enregistre le prix"
+          ]
+        },
+        {
+          "name": "RegisterFoodTypeIntent",
+          "slots": [
+            {
+              "name": "foodType",
+              "type": "AMAZON.Food",
+              "samples": [
+                "{foodType}"
+              ]
+            }
+          ],
+          "samples": [
+            "Enregistre le type de repas"
+          ]
+        },
+        {
+          "name": "ChooseStoreIntent",
+          "slots": [
+            {
+              "name": "store",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{store}"
+              ]
+            }
+          ],
+          "samples": [
+            "Le restaurant {store}",
+            "Je choisi {store}",
+            "Choisir le restaurant {store}",
+            "Choisir {store}"
+          ]
+        },
+        {
+          "name": "ConfirmMenuIntent",
+          "slots": [
+            {
+              "name": "menu",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{menu}"
+              ]
+            }
+          ],
+          "samples": [
+            "Le menu {menu}",
+            "Je voudrais {menu}",
+            "Choisir le menu {menu} "
+          ]
+        },
+        {
+          "name": "DeletePreferencesIntent",
+          "slots": [],
+          "samples": [
+            "Supprimer les préférences"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "12",
+              "name": {
+                "value": "décembre"
+              }
+            },
+            {
+              "id": "11",
+              "name": {
+                "value": "novembre"
+              }
+            },
+            {
+              "id": "10",
+              "name": {
+                "value": "octobre"
+              }
+            },
+            {
+              "id": "9",
+              "name": {
+                "value": "septembre"
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "aout"
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "juillet"
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "juin"
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "mai"
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "avril"
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "mars"
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "février"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "janvier"
+              }
+            }
+          ],
+          "name": "MonthSlotType"
+        },
+        {
+          "values": [
+            {
+              "id": "2",
+              "name": {
+                "value": "Végétarien"
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "Halal"
+              }
+            }
+          ],
+          "name": "FoodSlotType"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RegisterAddressIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.84857032889"
+          },
+          "slots": [
+            {
+              "name": "streetNumber",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1344353793906.444035594474"
+              }
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1344353793906.680433406855"
+              }
+            },
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1344353793906.1147283149216"
+              }
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1344353793906.1167411019157"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "RegisterPriceIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.476092226257"
+          },
+          "slots": [
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1157211647716.1348946303740"
+              }
+            },
+            {
+              "name": "deliveryCharges",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.482002107894.459789757317"
+              }
+            },
+            {
+              "name": "preparationTime",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.893770600263.799560266621"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        },
+        {
+          "name": "RegisterFoodTypeIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1121982508289"
+          },
+          "slots": [
+            {
+              "name": "foodType",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1555694010620.60368470192"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ChooseStoreIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.251305226065"
+          },
+          "slots": [
+            {
+              "name": "store",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.547978552554.1547291100599"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConfirmMenuIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.263501856090"
+          },
+          "slots": [
+            {
+              "name": "menu",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1162685512963.447265141444"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DeletePreferencesIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.671556511139.1026885116172.935011739140",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{month} n\u0027est pas un mois. Quel est votre vrai mois de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.671556511139.1101753056989.667362108870",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Vous me paraissez bien jeune. Quel est votre vrai année de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.671556511139.1101753056989.885162280685",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Vous me paraissez bien agé. Quel est votre vraie année de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.671556511139.1283484603661.525747953189",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Il y a au plus trente et un jour dans un mois. Quel est votre véritable jour de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.671556511139",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Voulez-vous enregistrer le {day} {month} {year} comme votre date de naissance ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "le {day} {month} {year} , c\u0027est bien ça ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.671556511139.1283484603661",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Donnez moi votre jour de naissance"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel jour êtes vous né ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel est votre jour de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.671556511139.1283484603661.868839137491",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{day} n\u0027est pas un jour valide. Donnez-moi un jour plus grand que zéro"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.671556511139.1101753056989",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Donnez-moi votre année de naissance"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né en quelle année ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quelle est votre année de naissance ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né le {day} {month} de quelle année ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.671556511139.1026885116172",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Vous êtes né quel mois ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel est votre mois de naissance ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1522014911377.532146773698",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel message dois-je vous rappeler pour votre anniversaire ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Quel message dois-je vous lire pour votre anniversaire ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Dites-moi le message à vous rappeler pour votre anniversaire ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1522014911377",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Le message {message} vous sera envoyé pour votre anniversaire. Etes-vous d\u0027accord ?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Je vous enverrai le message suivant pour votre anniversaire. {message} . Etes-vous d\u0027accord ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1344353793906.444035594474",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le numéro de la rue ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1344353793906.680433406855",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le nom de la rue ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1344353793906.1147283149216",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le code postal ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1344353793906.1167411019157",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le nom de la ville ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1157211647716.1348946303740",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le prix maximum souhaité ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.482002107894.459789757317",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le frais de livraison maximum souhaité ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.84857032889",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{streetNumber} {street} {code} {city} , est-ce bien ça ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1555694010620.60368470192",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le type de repas souhaité ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.476092226257",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Prix {price} euros, frais de livraison {deliveryCharges}  euros et temps de préparation {preparationTime}  minutes, est ce bien ce que vous vouliez ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1121982508289",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{foodType} , est ce bien ça ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.893770600263.799560266621",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Quel est le temps de préparation maximum souhaité ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.547978552554.1547291100599",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Lequel voulez-vous choisir ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.251305226065",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Êtes-vous sûr de vouloir choisir {store} ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.263501856090",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Êtes-vous sûr de ce choix, {menu} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1162685512963.447265141444",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Je voudrais {menu}"
+          },
+          {
+            "type": "PlainText",
+            "value": "Lequel souhaitez-vous prendre ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.373896672397",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Êtes-vous sûr de vouloir supprimer les préférences ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "44"
+}

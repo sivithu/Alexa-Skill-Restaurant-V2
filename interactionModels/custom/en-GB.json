@@ -1,0 +1,432 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "am hungry",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "DeletePreferencesIntent",
+          "slots": [],
+          "samples": [
+            "Delete preferences"
+          ]
+        },
+        {
+          "name": "RegisterAddressIntent",
+          "slots": [
+            {
+              "name": "streetNumber",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{streetNumber}"
+              ]
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetName",
+              "samples": [
+                "{street}"
+              ]
+            },
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{code}"
+              ]
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "samples": [
+                "{city}"
+              ]
+            }
+          ],
+          "samples": [
+            "Register my address"
+          ]
+        },
+        {
+          "name": "RegisterPriceIntent",
+          "slots": [
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{price}"
+              ]
+            },
+            {
+              "name": "deliveryCharges",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{deliveryCharges}"
+              ]
+            },
+            {
+              "name": "preparationTime",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "{preparationTime}"
+              ]
+            }
+          ],
+          "samples": [
+            "Register the price"
+          ]
+        },
+        {
+          "name": "SayStoresIntent",
+          "slots": [],
+          "samples": [
+            "Say list of stores"
+          ]
+        },
+        {
+          "name": "RegisterFoodTypeIntent",
+          "slots": [
+            {
+              "name": "foodType",
+              "type": "AMAZON.Food",
+              "samples": [
+                "{foodType}"
+              ]
+            }
+          ],
+          "samples": [
+            "Register the type of food"
+          ]
+        },
+        {
+          "name": "ChooseStoreIntent",
+          "slots": [
+            {
+              "name": "store",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{store} "
+              ]
+            }
+          ],
+          "samples": [
+            "I choose {store} restaurant"
+          ]
+        },
+        {
+          "name": "ConfirmMenuIntent",
+          "slots": [
+            {
+              "name": "menu",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{menu}"
+              ]
+            }
+          ],
+          "samples": [
+            "I choose {menu} menu"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "RegisterAddressIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.218265691029"
+          },
+          "slots": [
+            {
+              "name": "streetNumber",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.218265691029.806007012404"
+              }
+            },
+            {
+              "name": "street",
+              "type": "AMAZON.StreetName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.904341352505.469441723330"
+              }
+            },
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.904341352505.763193700200"
+              }
+            },
+            {
+              "name": "city",
+              "type": "AMAZON.City",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.904341352505.542329310786"
+              }
+            }
+          ]
+        },
+        {
+          "name": "RegisterPriceIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.185270965195"
+          },
+          "slots": [
+            {
+              "name": "price",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.387221429805.1570264720338"
+              }
+            },
+            {
+              "name": "deliveryCharges",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.387221429805.1391472242377"
+              }
+            },
+            {
+              "name": "preparationTime",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.387221429805.273292997565"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ChooseStoreIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1356711125131"
+          },
+          "slots": [
+            {
+              "name": "store",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.328950615721.131166386361"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConfirmMenuIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.998120427597"
+          },
+          "slots": [
+            {
+              "name": "menu",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.698948557356.1439573480184"
+              }
+            }
+          ]
+        },
+        {
+          "name": "RegisterFoodTypeIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.390696879793"
+          },
+          "slots": [
+            {
+              "name": "foodType",
+              "type": "AMAZON.Food",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.390696879793.1253475419754"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.218265691029",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{streetNumber} , {street} {code} {city} , isn\u0027t it ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.185270965195",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "The price is {price} , the delivery charges {deliveryCharges} and the preparation time {preparationTime} , is it good ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1356711125131",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure to choose {store} ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.218265691029.806007012404",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your street number ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.998120427597",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you want {menu} menu ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.904341352505.469441723330",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your street name ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.904341352505.763193700200",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your street code ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.904341352505.542329310786",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your city ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.387221429805.1570264720338",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the desired maximum price ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.387221429805.1391472242377",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the desired maximum delivery charges ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.387221429805.273292997565",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s the desired preparation time ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.390696879793.1253475419754",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What\u0027s your food type ?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.390696879793",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "{foodType} , isn\u0027t it ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.328950615721.131166386361",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What would you like to take ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.698948557356.1439573480184",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What menu do you like ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "2"
+}

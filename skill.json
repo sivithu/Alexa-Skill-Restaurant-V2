@@ -1,0 +1,60 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:188021692640:function:10d7593e-0b50-4665-968d-96f399bcc0aa:Release_0"
+        },
+        "interfaces": [],
+        "regions": {
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:188021692640:function:10d7593e-0b50-4665-968d-96f399bcc0aa:Release_0"
+            }
+          },
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:188021692640:function:10d7593e-0b50-4665-968d-96f399bcc0aa:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:188021692640:function:10d7593e-0b50-4665-968d-96f399bcc0aa:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::profile:given_name:read"
+      },
+      {
+        "name": "alexa::alerts:reminders:skill:readwrite"
+      }
+    ],
+    "publishingInformation": {
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": [],
+      "isAvailableWorldwide": true,
+      "locales": {
+        "fr-FR": {
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa ouvre le génie des salutations",
+            "bonjour",
+            "aide"
+          ],
+          "keywords": [],
+          "name": "Projet Faim",
+          "summary": "Sample Short Description"
+        },
+        "en-GB": {
+          "name": "Projet Faim"
+        }
+      },
+      "testingInstructions": "Sample Testing Instructions."
+    }
+  }
+}
